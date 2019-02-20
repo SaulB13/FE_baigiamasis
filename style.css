@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-html {
-  line-height: 1.15;
-}
-
 body, html {
   margin: 0;
   padding: 0;
@@ -18,7 +14,7 @@ body {
   background-image: radial-gradient(circle, #011a19, #09959ca1, #00212bed);
 }
 
-body, h1, h2, h3, h4, h5, h6 {
+body, h1{
   margin: 0;
 }
 
@@ -43,45 +39,6 @@ body, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   transition: .6s;
   opacity: .5;
-}
-
-a {
-  background-color: transparent;
-}
-
-ol, ul {
-  padding-left: 0;
-}
-
-ul ul, ol ul {
-  list-style-type: circle;
-}
-
-.fa-times:before {
-  content: "\f00d";
-}
-
-.fa, .fas {
-  font-weight: 900;
-}
-
-.fa, .far, .fas {
-  font-family: "Font Awesome 5 Free";
-  margin-top: 16px;
-}
-
-.fa-2x {
-  font-size: 2em;
-}
-
-.fa, .fab, .fal, .far, .fas {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1;
 }
 
 .header-container {
@@ -215,10 +172,6 @@ ul ul, ol ul {
 .main-heading {
   color: white;
   margin-left: 16px;
-}
-
-article, aside, footer, header, hgroup, main, nav, section {
-  display: block;
 }
 
 .image-container {
@@ -366,17 +319,30 @@ input {
   border-radius: 5px;
 }
 
-button, input, optgroup, select, textarea {
+button, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 768px) {
   .main-top .flex-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .header .navigation .mobile-burger{
+    display: block;
+    margin: 0;
+  }
+
+  .mobile-burger:hover {
+    cursor: pointer;
+  }
+
+  .dropdown-button, .dropdown {
+    display: none;
   }
 
   .top-text h1 {
@@ -438,4 +404,18 @@ button, input, optgroup, select, textarea {
     padding: 0 20px;
   }
 
+}
+
+@media (max-width: 550px) {
+  .image-container .image-container-subcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image-container .image-container-subcontainer {
+    width: calc(100% - 40px);
+    margin: 20px;
+  }
 }
