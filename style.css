@@ -65,11 +65,6 @@ body, h1{
   padding-top: 18px;
 }
 
-.header .navigation .mobile-burger {
-  display: none;
-  cursor: pointer;
-}
-
 .header .navigation {
   display: inline-block;
   margin-right: 16px;
@@ -93,11 +88,10 @@ ul {
   list-style-type: none;
 }
 
-.header .navigation ul .dropdown {
+.header .navigation ul .dropdown, .mobile-dropdown {
   display: none;
   position: absolute;
   top: 180%;
-
 }
 
 .dropdown li {
@@ -111,7 +105,7 @@ ul {
   font-weight: bold;
 }
 
-.header .navigation .dropdown {
+.header .navigation .dropdown, .mobile-dropdown {
   width: 100%;
   z-index: 9;
 }
@@ -125,6 +119,20 @@ ul {
   border: 1px solid white;
   border-radius: 5px;
   padding: 6px;
+}
+
+.mobile-nav {
+  margin: 0 auto;
+  float: center;
+  position: relative;
+}
+
+.mobile-menu {
+  font-size: 34px;
+  display: none;
+  line-height: 40px;
+  position: absolute;
+  padding: 5px;
 }
 
 .main-top {
@@ -229,7 +237,7 @@ ul {
   box-sizing: border-box;
 }
 
-.contact-form {
+.access-form {
   width: 100%;
   background-image: url("megastructure-2-color.jpg");
   background-repeat: no-repeat;
@@ -241,14 +249,14 @@ ul {
   align-items: center;
   padding: 50px 0;
 }
-.contact-form .contact-form-header {
+.access-form .access-form-header {
   color: #fff;
   text-align: center;
   width: 100%;
   margin: 0 auto;
 }
 
-.contact-form .form .access-button {
+.access-form .form .access-button {
   color: #fff;
   border: 1px solid #00aca8;
   border-radius: 5px;
@@ -260,7 +268,7 @@ ul {
   font-weight: 600;
 }
 
-.contact-form .form .access-button:hover {
+.access-form .form .access-button:hover {
   background-color: #39ffff;
   color: #004645;
   cursor: pointer;
@@ -268,12 +276,21 @@ ul {
   border-radius: 5px;
 }
 
-.contact-form .form .form-inputs {
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.access-form .form .form-inputs {
   display: flex;
   justify-content: space-between;
 }
 
-.contact-form .form .for-email {
+.access-form .form .for-email {
   padding-top: 12px;
 }
 
@@ -282,7 +299,7 @@ form {
   margin-top: 3em;
 }
 
-.contact-form .form textarea {
+.access-form .form textarea {
   margin: 50px auto;
   border: 0;
   border-radius: 5px;
@@ -292,19 +309,19 @@ form {
   box-sizing: border-box;
 }
 
-.contact-form .form .form-inputs label {
+.access-form .form .form-inputs label {
   display: block;
   color: #fff;
   padding-bottom: 6px;
 }
 
-.contact-form .form .for-email label {
+.access-form .form .for-email label {
   display: block;
   color: #fff;
   padding-bottom: 6px;
 }
 
-.contact-form .form .for-email input {
+.access-form .form .for-email input {
   box-sizing: border-box;
   width: 100%;
   height: 24px;
@@ -336,16 +353,21 @@ button, input, textarea {
     align-items: center;
   }
 
-  .header .navigation .mobile-burger{
+  .mobile-menu {
     display: block;
-    margin: 0;
   }
 
-  .mobile-burger:hover {
+  .mobile-menu:hover {
     cursor: pointer;
+    border: solid 1px white;
+    border-radius: 3px;
   }
 
-  .dropdown-button, .dropdown {
+  #toggle {
+    display: block;
+  }
+
+  .dropdown-button {
     display: none;
   }
 
@@ -384,7 +406,7 @@ button, input, textarea {
     width: 80%;
   }
 
-  .contact-form .form .form-inputs {
+  .access-form .form .form-inputs {
     flex-direction: column;
     width: 100%;
   }
@@ -394,7 +416,7 @@ button, input, textarea {
     height: 40px;
   }
 
-  .contact-form .form .for-email input {
+  .access-form .form .for-email input {
     width: 100%;
     height: 40px;
   }
@@ -404,7 +426,7 @@ button, input, textarea {
     padding-bottom: 12px;
   }
 
-  .contact-form-header h1 {
+  .access-form-header h1 {
     padding: 0 20px;
   }
 
