@@ -18,6 +18,13 @@ window.addEventListener('scroll', function(event) {
 	}
 });
 
+mobileDropdown.addEventListener('click', () => {
+	if (['mobile-dropdown'].style.display === 'none') {
+		['mobile-dropdown'].style.display = 'block';
+	} else {
+		['mobile-dropdown'].style.display = 'none';
+	}
+});
 
 scrollToTop.addEventListener('click', function(event) {
 	window.scrollTo(0,0);
