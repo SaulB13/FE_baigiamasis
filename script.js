@@ -10,14 +10,6 @@ dropdownButton.addEventListener('click', function(event) {
 	}		
 });
 
-mobileDropdown.addEventListener('click', () => {
-	if (['mobile-dropdown'].style.display === 'none') {
-		['mobile-dropdown'].style.display = 'block';
-	} else {
-		['mobile-dropdown'].style.display = 'none';
-	}
-});
-
 window.addEventListener('scroll', function(event) {
 	if (window.scrollY > 60) {
 		scrollToTop.style.display = 'block';
